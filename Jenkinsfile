@@ -11,7 +11,6 @@ pipeline{
             steps{
                 echo "Build"
                 bat 'mvn clean package checkstyle:checkstyle'
-                 recordIssues(tools: [checkStyle(reportEncoding: 'UTF-8')])
             }
         }
        
