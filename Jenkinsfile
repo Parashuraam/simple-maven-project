@@ -12,20 +12,10 @@ pipeline{
                 echo "Build"
                 bat 'mvn clean package'
             }
-
-
-            post{
-                success{
-                    echo "Now Archieving . . ."
-                    archiveArtifacts artifacts: '**/target/*.war'
-                }
-            }
-
         }
-
-        stage('Checkstyle') {
+        stage('Checkstyle'){
              steps {
-                 bat "mvn checkstyle:check"
+                 bat "mvn checkstyle:checkstyle"
                 recordIssues(tools: [checkStyle(reportEncoding: 'UTF-8')])
                     }
         }
