@@ -15,7 +15,7 @@ pipeline{
         }
         stage('Checkstyle'){
              steps {
-                 bat "mvn checkstyle:checkstyle"
+                 bat "mvn checkstyle:check"
                 recordIssues(tools: [checkStyle(reportEncoding: 'UTF-8')])
                     }
         }
