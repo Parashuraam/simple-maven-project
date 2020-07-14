@@ -7,7 +7,7 @@ pipeline{
         stage("Build"){
             steps{
                 echo "Build"
-                bat 'mvn clean package'
+                bat 'mvn clean'
             }
         }
     }
